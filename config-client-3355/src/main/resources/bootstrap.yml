@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      name: config-client #需要github上读取的资源，注意咩有后缀名
+      profile: dev #本次访问的配置项
+      label: master
+      uri: http://localhost:3344 #此地址就是服务端，它会连接到github的仓库中

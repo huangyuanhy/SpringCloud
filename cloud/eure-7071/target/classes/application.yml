@@ -1,0 +1,24 @@
+#server: 
+ # port: 7071
+  
+#eureka:
+ # instance:
+  #  hostname: localhost
+  #client:
+   # register-with-eureka: false
+    #fetch-registry: false  #表示自己就是注册中心 维护服务实例
+    #service-url:
+     # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  
+#上面的是单机版本
+server: 
+  port: 7071
+  
+eureka:
+  instance:
+    hostname: eureka7071.com  #已经在host文件下做了域名映射
+  client:
+    register-with-eureka: false
+    fetch-registry: false  #表示自己就是注册中心 维护服务实例
+    service-url:
+      defaultZone: http://eureka7072.com:7072/eureka/,http://eureka7073.com:7073/eureka/

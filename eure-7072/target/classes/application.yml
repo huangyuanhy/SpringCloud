@@ -1,0 +1,12 @@
+server: 
+  port: 7072
+  
+eureka:
+  instance:
+    hostname: eureka7072.com  #已经在host文件下做了域名映射
+  client:
+    register-with-eureka: false
+    fetch-registry: false  #表示自己就是注册中心 维护服务实例
+    service-url:
+      defaultZone: http://eureka7071.com:7071/eureka/,http://eureka7073.com:7073/eureka/
+  
