@@ -1,1 +1,2 @@
 SpringCloud的相关学习案例
+采用集群配置，综合运用了Eureka注册中心，Hystrix熔断服务、Rest服务调用、CloudConfig 服务配置中心、Ribbon负载均衡等技术，对微服务技术桟有了一个较为深刻的认识。
