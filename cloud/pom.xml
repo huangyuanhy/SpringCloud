@@ -65,6 +65,6 @@
 		<module>provider-dept</module>
 		<module>consumer-dept</module>
 		<module>eureka</module>
-		<module>eure-7071</module>
+		
 	</modules>
 </project>
