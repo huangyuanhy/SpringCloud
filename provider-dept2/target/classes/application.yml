@@ -1,0 +1,35 @@
+server:
+  port: 8082
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: entity
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+  
+spring:
+  application:
+    name: cloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.106.39.238:3306/cloudDB02
+    username: root
+    password: 925925
+    data-password: GuoWJ-521
+    dbcp2:
+      initial-size: 5
+      min-idle: 5
+      max-total: 5
+#下面info的信息，将会显示在 ip+端口/info 下
+info:
+  app.name: springcloud
+  build.version: $project.version$ #这个访问有问题，要在pom里面配置下才能动态的显示 具体配置不知
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7071.com:7071/eureka/,http://eureka7073.com:7073/eureka/ ,http://eureka7072.com:7072/eureka/  
+  instance:
+    instance-id: cloud-dept
+    prefer-ip-address: true #访问路径可以显示ip 而不是cloud-dept
+              

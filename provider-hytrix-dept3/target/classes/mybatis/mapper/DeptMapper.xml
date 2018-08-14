@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<!-- 如果使用mapper代理的话，此处的命名空间名称与 mapper接口全路径一致 -->
+<mapper namespace="dept.dao.DeptDao">
+	<select id="findById" resultType="entity.Dept" >
+		select * from dept where deptno=#{deptno};
+	
+	</select>
+
+	<select id="findAll" resultType="entity.Dept" >
+		select * from dept;
+	
+	</select>
+	<insert id="addDept" parameterType="entity.Dept">
+		INSERT INTO dept
+            (dname,
+             db_source)
+VALUES (#{dname},
+        'cloudDB01');
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

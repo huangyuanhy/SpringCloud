@@ -1,0 +1,19 @@
+server:
+  port: 9527
+  
+spring:
+  application:
+    name: zuul-gateway
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7071.com:7071/eureka/,http://eureka7073.com:7073/eureka/ ,http://eureka7072.com:7072/eureka/  
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true #访问路径可以显示ip 而不是cloud-dept
+              
+zuul:
+  #prefix: /zuul #访问前缀
+  routes:
+    dept.serviceId: cloud-dept  #将这个服务实例 用路径来映射
+    dept.path: /deptzuul/** #配置后的访问路径： localhost：9527/deptzuul/dept/get/1   配置前的访问路径： localhost：9527/cloud-dept/dept/get/1
